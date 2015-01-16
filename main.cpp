@@ -18,7 +18,7 @@ int main() {
 			int monsterDmg = monster.getAttackDmg();
 			pc.takeDamage(monsterDmg);
 		} else {
-			// Player receiveds a reward for slaying the enemy successfully!
+			// Player receives a reward for slaying the enemy successfully!
 			int experience = monster.getXP();
 			std::cout << monster.getName() << " has died! You earn " << experience << " XP." << std::endl;
 			std::cout << "-- Battle ends --\n" << std::endl;
