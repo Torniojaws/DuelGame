@@ -18,7 +18,7 @@ int main() {
 		if(monster.isAlive()) {
 			std::cout << "Monster retaliates!" << std::endl;
 			int monsterDmg = monster.getAttackDmg();
-			std::cout << pc.getName() << " took " << monsterDmg << " DMG!";
+			std::cout << pc.getName() << " took " << monsterDmg << " DMG! ";
 			pc.takeDamage(monsterDmg);
 			std::cout << "You have " << pc.getHealth() << " HP left." << std::endl;
 		} else {
