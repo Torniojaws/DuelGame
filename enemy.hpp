@@ -1,22 +1,14 @@
 #ifndef ENEMY_H
 #define ENEMY_H
-#include <string>
+#include "character.hpp"
 
-class Enemy {
+class Enemy : public Character {
 	private:
-		std::string name;
-		int attack;
-		int defense;
-		int health;
 		int xp;
 	public:
 		Enemy();
-		bool isAlive();
-		int getHealth();
-		std::string getName();
 		int getAttackDmg();
 		int getXP();
-		int takeDamage(int d);
 		void getNew(int pcLevel);
 };
 

@@ -14,34 +14,12 @@ Player::Player() {
 	name = pcName;
 }
 
-bool Player::isAlive() {
-	return health > 0;
-}
-
-int Player::getHealth() {
-	return health;
-}
-
-std::string Player::getName() {
-	return name;
-}
-
 int Player::getLevel() {
 	return level;
 }
 
-int Player::getAttackDmg() {
-	int dmg = attack * level;
-	return dmg;
-}
-
 void Player::heal() {
 	health += 20 * level;
-}
-
-int Player::takeDamage(int d) {
-	int effectiveDamage = d - (defense/100);
-	health -= effectiveDamage;
 }
 
 // Whenever PC gets experience, we check for level-up

@@ -10,18 +10,7 @@ Enemy::Enemy() {
 	xp = health * defense + attack;
 }
 
-bool Enemy::isAlive() {
-	return health > 0;
-}
-
-int Enemy::getHealth() {
-	return health;
-}
-
-std::string Enemy::getName() {
-	return name;
-}
-
+// Monsters have a unique attack method
 int Enemy::getAttackDmg() {
 	return attack;
 }
@@ -30,12 +19,8 @@ int Enemy::getXP() {
 	return xp;
 }
 
-int Enemy::takeDamage(int d) {
-	int effectiveDamage = d - (defense/100);
-	health -= effectiveDamage;
-}
-
 void Enemy::getNew(int pcLevel) {
+	std::cout << "** GRAAARR!! ** A new monster appears!" << std::endl;
 	attack = pcLevel * 3;
 	defense = pcLevel * 10;
 	health = pcLevel * 30;

@@ -10,21 +10,18 @@ int main() {
 		// Player has the first round
 		std::cout << pc.getName() << " attacks " << monster.getName() << "!" << std::endl;
 		int dmg = pc.getAttackDmg();
-		std::cout << monster.getName() << " takes " << dmg << " DMG! ";
 		monster.takeDamage(dmg);
-		std::cout << "It now has " << monster.getHealth() << " HP left." << std::endl;
 		
 		// The monster strikes back unless dead
 		if(monster.isAlive()) {
 			std::cout << "Monster retaliates!" << std::endl;
 			int monsterDmg = monster.getAttackDmg();
-			std::cout << pc.getName() << " took " << monsterDmg << " DMG! ";
 			pc.takeDamage(monsterDmg);
-			std::cout << "You have " << pc.getHealth() << " HP left." << std::endl;
 		} else {
 			// Player receiveds a reward for slaying the enemy successfully!
 			int experience = monster.getXP();
 			std::cout << monster.getName() << " has died! You earn " << experience << " XP." << std::endl;
+			std::cout << "-- Battle ends --\n" << std::endl;
 			pc.addXP(experience);
 			monster.getNew(pc.getLevel()); // Reset enemy and adjust to PC level
 		}
